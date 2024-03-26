@@ -1,0 +1,33 @@
+class Aluno:
+    def __init__(self, cod, nome, matricula):
+        self.cod = cod
+        self.nome = nome
+        self.matricula = matricula
+
+    def imprimir(self):
+        print("código: ", self.cod)
+        print("nome: ", self.nome)
+        print("matricula: ", self.matricula)
+
+class AlunoGraduacao(Aluno):
+    def __init__(self, cod, nome, matricula, semestre):
+        super().__init__( cod, nome, matricula)
+        self.semestre = semestre
+
+    def imprimir(self):
+        super().imprimir()
+        print("Semestre: ", self.semestre)
+
+class AlunoEnsinoMedio(Aluno):
+    def __init__(self, cod, nome, matricula, ano):
+        super().__init__( cod, nome, matricula)
+        self.ano = ano
+    
+    def imprimir(self):
+        super().imprimir()
+        print("Ano: ", self.ano)
+
+
+a1 = AlunoGraduacao("01", "Jack", "0001", "3º")
+
+a1.imprimir()
